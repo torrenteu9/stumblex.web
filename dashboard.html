@@ -50,17 +50,16 @@
 
   <h1>Welcome, <span id="username"></span></h1>
 
-  <h2>Your Servers with Admin Permissions</h2>
+  <h2>Servers where the bot is present</h2>
   <ul id="guilds-list"></ul>
 
   <script>
     async function fetchUser() {
-      const res = await fetch('/api/user');
+      const res = await fetch('https://stumblexweb.vercel.app/api/user');
       const data = await res.json();
 
       if (!data.loggedIn) {
-        // No logueado, volver al login
-        window.location.href = '/';
+        window.location.href = 'https://stumblexweb.vercel.app/';
         return;
       }
 
@@ -69,13 +68,13 @@
       const guildsList = document.getElementById('guilds-list');
       guildsList.innerHTML = '';
 
-      // Filtrar guilds con permisos ADMINISTRATOR
-      const adminGuilds = data.guilds.filter(g => (g.permissions & 0x8) === 0x8);
+      // Mostrar todos los servidores donde está el bot
+      const botGuilds = data.guilds;
 
-      if (adminGuilds.length === 0) {
-        guildsList.innerHTML = '<li>You have no servers with admin permissions.</li>';
+      if (botGuilds.length === 0) {
+        guildsList.innerHTML = '<li>The bot is not in any servers.</li>';
       } else {
-        adminGuilds.forEach(guild => {
+        botGuilds.forEach(guild => {
           const iconUrl = guild.icon
             ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
             : 'https://via.placeholder.com/32?text=?';
@@ -88,7 +87,7 @@
     }
 
     function logout() {
-      window.location.href = '/logout';
+      window.location.href = 'https://stumblexweb.vercel.app/logout';
     }
 
     fetchUser();
