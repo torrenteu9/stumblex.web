@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StumbleX - The Ultimate Discord Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://wallpapercave.com/wp/wp11721033.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(3px);
+      color: #fff;
+    }
+    header {
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #00acee;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #ddd;
+    }
+
+    .discord-login {
+      margin-top: 2rem;
+    }
+
+    .discord-login a {
+      background: #5865F2;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .discord-login a:hover {
+      background: #4752c4;
+    }
+
+    .dashboard-btn {
+      position: absolute;
+      top: 20px;
+      right: 120px;
+      background: #00acee;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: crimson;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .plans {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      width: 250px;
+    }
+
+    .plan h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .plan ul li {
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .free { border-left: 5px solid #888; }
+    .pro { border-left: 5px solid #4da6ff; }
+    .diamond { border-left: 5px solid #ff69b4; }
+    .extreme { border-left: 5px solid gold; }
+
+    .pay-button {
+      margin-top: 1rem;
+      background: #ffc439;
+      color: #111;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .pay-button:hover {
+      background: #ffb347;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="dashboard.html" class="dashboard-btn">Dashboard</a>
+  <a href="index.html" class="logout-btn">Logout</a>
+
+  <header>
+    <h1>StumbleX Bot</h1>
+    <p>The most powerful Discord bot for tournaments, ranking, moderation, music, and more.</p>
+    <div class="discord-login">
+      <a href="https://discord.com/oauth2/authorize?client_id=1382408855597617152&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback&response_type=code&scope=identify%20guilds">
+        Login with Discord
+      </a>
+    </div>
+  </header>
+
+  <section class="plans">
+    <div class="plan free">
+      <h2>Free (MarcX)</h2>
+      <ul>
+        <li>✔️ Basic commands</li>
+        <li>✔️ Limited music</li>
+        <li>✔️ Simple moderation</li>
+        <li>✖️ No ranking system</li>
+        <li>✖️ No virtual economy</li>
+      </ul>
+      <a class="pay-button" href="https://www.paypal.me/mmoralesbertran2/0" target="_blank">Get Free</a>
+    </div>
+
+    <div class="plan pro">
+      <h2>Pro</h2>
+      <ul>
+        <li>✔️ All Free features</li>
+        <li>✔️ Weekly tournaments</li>
+        <li>✔️ Ranking system</li>
+        <li>✔️ Custom roles</li>
+        <li>✖️ Premium commands</li>
+      </ul>
+      <a class="pay-button" href="https://www.paypal.me/mmoralesbertran2/2" target="_blank">2€ / lifetime</a>
+    </div>
+
+    <div class="plan diamond">
+      <h2>Diamond</h2>
+      <ul>
+        <li>✔️ All Pro features</li>
+        <li>✔️ Premium commands unlocked</li>
+        <li>✔️ Virtual economy</li>
+        <li>✔️ Emoji & embed customization</li>
+        <li>✖️ Dedicated hosting</li>
+      </ul>
+      <a class="pay-button" href="https://www.paypal.me/mmoralesbertran2/4" target="_blank">4€ / lifetime</a>
+    </div>
+
+    <div class="plan extreme">
+      <h2>Extreme</h2>
+      <ul>
+        <li>✔️ All Diamond features</li>
+        <li>✔️ Dedicated hosting</li>
+        <li>✔️ Sponsor badge</li>
+        <li>✔️ Private support line</li>
+        <li>✔️ Vote on features</li>
+      </ul>
+      <a class="pay-button" href="https://www.paypal.me/mmoralesbertran2/6" target="_blank">6€ / lifetime</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 StumbleX Bot | Made by Hugo & MarcX
+  </footer>
+
+</body>
+</html>
