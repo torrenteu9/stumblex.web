@@ -181,6 +181,67 @@
     width: 20px;
     height: 20px;
   }
+
+  /* Estilos para invitación */
+  .invite-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    gap: 20px;
+    color: #fff;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .invite-card:hover {
+    box-shadow: 0 8px 40px rgba(250, 204, 21, 0.9);
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .invite-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+  }
+
+  .invite-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #facc15;
+    margin-bottom: 12px;
+  }
+
+  .invite-button {
+    background-color: #5865F2;
+    color: white;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgb(88 101 242 / 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .invite-button img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .invite-button:hover {
+    background-color: #4752c4;
+    box-shadow: 0 6px 20px rgb(71 82 196 / 0.8);
+  }
 </style>
 </head>
 <body>
@@ -230,8 +291,15 @@
   function loadInvitar() {
     contentArea.innerHTML = `
       <div class="section-title">Invitar</div>
-      <div style="color:#cbd5e1; font-size:18px; max-width:600px; margin: 0 auto;">
-        Aquí puedes poner enlaces o botones para invitar a tu proyecto, servidor o lo que necesites.
+      <div class="invite-card">
+        <img class="invite-logo" src="https://i.ibb.co/x87Q3SHm/stumblex-profile.jpg" alt="StumbleX Logo" />
+        <div class="invite-content">
+          <h3>StumbleX</h3>
+          <a href="https://discord.com/oauth2/authorize?client_id=1382408855597617152&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="invite-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" />
+            Invite
+          </a>
+        </div>
       </div>
     `;
   }
