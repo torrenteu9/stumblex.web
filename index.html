@@ -182,60 +182,69 @@
     height: 20px;
   }
 
-  /* Estilos para invitación */
-  .invite-card {
+  /* Estilos para invitación más ancha */
+  .invite-card-long {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 25px 30px;
-    display: flex;
-    align-items: center;
-    max-width: 400px;
+    padding: 30px 40px;
+    max-width: 500px;
     margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    gap: 20px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
   }
 
-  .invite-card:hover {
+  .invite-card-long:hover {
     box-shadow: 0 8px 40px rgba(250, 204, 21, 0.9);
     background-color: rgba(255, 255, 255, 0.25);
   }
 
-  .invite-logo {
-    width: 80px;
-    height: 80px;
+  .invite-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .invite-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #facc15;
+    margin: 0;
+  }
+
+  .invite-logo-small {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #facc15;
     box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
   }
 
-  .invite-content h3 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #facc15;
-    margin-bottom: 12px;
-  }
-
   .invite-button {
     background-color: #5865F2;
     color: white;
-    padding: 10px 22px;
-    font-weight: 600;
-    font-size: 18px;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 20px;
     border-radius: 12px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     box-shadow: 0 4px 12px rgb(88 101 242 / 0.6);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .invite-button img {
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
   }
 
   .invite-button:hover {
@@ -291,15 +300,15 @@
   function loadInvitar() {
     contentArea.innerHTML = `
       <div class="section-title">Invitar</div>
-      <div class="invite-card">
-        <img class="invite-logo" src="https://i.ibb.co/x87Q3SHm/stumblex-profile.jpg" alt="StumbleX Logo" />
-        <div class="invite-content">
+      <div class="invite-card-long">
+        <div class="invite-header">
           <h3>StumbleX</h3>
-          <a href="https://discord.com/oauth2/authorize?client_id=1382408855597617152&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="invite-button">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" />
-            Invite
-          </a>
+          <img class="invite-logo-small" src="https://i.ibb.co/x87Q3SHm/stumblex-profile.jpg" alt="StumbleX Logo" />
         </div>
+        <a href="https://discord.com/oauth2/authorize?client_id=1382408855597617152&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="invite-button">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" />
+          Añadir al Servidor
+        </a>
       </div>
     `;
   }
