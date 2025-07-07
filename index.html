@@ -20,19 +20,19 @@
     height: 100%;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    background-color: #121417;
-    color: #e0e6f0;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: #1e293b;
   }
 
-  /* Fondo profesional con patrón y luz difusa */
+  /* Fondo patrón sutil claro */
   body::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background:
-      radial-gradient(circle at center, rgba(255 255 255 / 0.08), transparent 70%),
-      repeating-radial-gradient(circle, rgba(255 255 255 / 0.04), rgba(255 255 255 / 0.04) 1px, transparent 2px, transparent 6px);
+      radial-gradient(circle at center, rgba(255 255 255 / 0.7), transparent 70%),
+      repeating-radial-gradient(circle, rgba(0 0 0 / 0.02), rgba(0 0 0 / 0.02) 1px, transparent 2px, transparent 6px);
     z-index: -1;
     pointer-events: none;
   }
@@ -45,10 +45,10 @@
     z-index: 20;
     display: flex;
     gap: 30px;
-    background: rgba(255 255 255 / 0.1);
+    background: rgba(255 255 255 / 0.8);
     padding: 10px 25px;
     border-radius: 50px;
-    box-shadow: 0 0 15px rgb(0 0 0 / 0.5);
+    box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
     backdrop-filter: blur(10px);
   }
 
@@ -56,7 +56,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    color: #cbd5e1;
+    color: #475569;
     cursor: pointer;
     transition: color 0.3s ease;
   }
@@ -110,8 +110,21 @@
   .subtitle {
     font-size: 22px;
     font-weight: 500;
-    color: #a3aed0;
-    margin-bottom: 60px;
+    color: #475569;
+    margin-bottom: 40px;
+  }
+
+  /* Caja blanca con texto explicativo en Inicio */
+  .info-box {
+    background: white;
+    border-radius: 20px;
+    max-width: 700px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    color: #334155;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
   }
 
   /* Subtítulos secciones arriba */
@@ -133,19 +146,19 @@
   }
 
   .dev-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     padding: 25px 25px 25px 100px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: left;
-    color: #fff;
+    color: #334155;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
   }
 
   .dev-card:hover {
-    box-shadow: 0 8px 40px rgba(250, 204, 21, 0.9);
-    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 40px rgba(250, 204, 21, 0.3);
+    background-color: rgba(255, 255, 255, 1);
   }
 
   .dev-card .avatar {
@@ -158,7 +171,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #facc15;
-    box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.7);
   }
 
   .dev-card .name {
@@ -171,7 +184,7 @@
   .dev-card .desc {
     font-weight: 500;
     font-size: 16px;
-    color: #cbd5e1;
+    color: #64748b;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -184,13 +197,13 @@
 
   /* Estilos para invitación más ancha */
   .invite-card-long {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     padding: 30px 40px;
     max-width: 500px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #334155;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,8 +213,8 @@
   }
 
   .invite-card-long:hover {
-    box-shadow: 0 8px 40px rgba(250, 204, 21, 0.9);
-    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 40px rgba(250, 204, 21, 0.4);
+    background-color: rgba(255, 255, 255, 1);
   }
 
   .invite-header {
@@ -224,7 +237,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #facc15;
-    box-shadow: 0 0 15px rgba(250, 204, 21, 0.9);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.7);
   }
 
   .invite-button {
@@ -262,11 +275,7 @@
 </nav>
 
 <div class="content" id="contentArea">
-  <div class="title-wrapper">
-    <div class="title">StumbleX</div>
-    <img class="title-image" src="https://i.ibb.co/x87Q3SHm/stumblex-profile.jpg" alt="StumbleX logo" />
-  </div>
-  <div class="subtitle">Bienvenido a tu portal de desarrollo</div>
+  <!-- Inicial cargará aquí el contenido -->
 </div>
 
 <script>
@@ -294,6 +303,12 @@
         <img class="title-image" src="https://i.ibb.co/x87Q3SHm/stumblex-profile.jpg" alt="StumbleX logo" />
       </div>
       <div class="subtitle">Bienvenido a tu portal de desarrollo</div>
+
+      <div class="info-box">
+        <p><strong>StumbleX</strong> es un bot de Discord activo 24/7, una poderosa mezcla entre <em>StumbleHelper</em> y <em>MarcX Bot</em>. Diseñado especialmente para la comunidad de <strong>Stumble Guys</strong>, ofrece una experiencia completa y funcional para mejorar la interacción, organización y diversión dentro del juego y su comunidad.</p>
+        <p>Entre sus características destacan comandos personalizados, soporte constante, actualizaciones frecuentes y una interfaz amigable tanto para usuarios como para desarrolladores. StumbleX se adapta a las necesidades del servidor, brindando herramientas para torneos, scrims, estadísticas y mucho más.</p>
+        <p>Únete a la comunidad, invita al bot y descubre todas las funcionalidades que StumbleX tiene para ofrecerte.</p>
+      </div>
     `;
   }
 
