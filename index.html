@@ -48,10 +48,10 @@
     z-index: 20;
     display: flex;
     gap: 30px;
-    background: rgba(255 255 255 / 0.8);
+    background: rgba(0 0 0 / 0.4);
     padding: 10px 25px;
     border-radius: 50px;
-    box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
+    box-shadow: 0 0 15px rgb(0 0 0 / 0.2);
     backdrop-filter: blur(10px);
   }
 
@@ -59,7 +59,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    color: #475569;
+    color: #fff; /* blanco */
     cursor: pointer;
     transition: color 0.3s ease;
   }
@@ -266,6 +266,118 @@
   .invite-button:hover {
     background-color: #4752c4;
     box-shadow: 0 6px 20px rgb(71 82 196 / 0.8);
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+
+    /* Navegación centrada y más compacta */
+    nav {
+      right: 20px;
+      top: 15px;
+      padding: 8px 15px;
+      gap: 15px;
+      background: rgba(0 0 0 / 0.5);
+    }
+    nav a {
+      font-size: 16px;
+    }
+
+    /* Contenedor principal con padding más pequeño */
+    .content {
+      padding: 120px 20px 20px 20px;
+      max-width: 95%;
+    }
+
+    /* Apilar título e imagen verticalmente */
+    .title-wrapper {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .title {
+      font-size: 50px;
+    }
+
+    .title-image {
+      width: 70px;
+      height: 70px;
+    }
+
+    /* Tarjetas desarrolladores a 100% ancho y menos padding */
+    .dev-container {
+      max-width: 100%;
+      gap: 25px;
+    }
+
+    .dev-card {
+      padding: 20px 20px 20px 90px;
+    }
+
+    /* Info box más estrecha y texto más legible */
+    .info-box {
+      padding: 25px 25px;
+      font-size: 16px;
+    }
+
+    /* Botón invitación más pequeño */
+    .invite-card-long {
+      max-width: 90%;
+      padding: 20px 25px;
+    }
+
+    .invite-header h3 {
+      font-size: 26px;
+    }
+
+    .invite-logo-small {
+      width: 50px;
+      height: 50px;
+    }
+
+    .invite-button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    nav {
+      right: 10px;
+      top: 10px;
+      padding: 6px 12px;
+      gap: 10px;
+    }
+
+    nav a {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .title-image {
+      width: 50px;
+      height: 50px;
+    }
+
+    .info-box {
+      font-size: 14px;
+      padding: 20px 15px;
+    }
+
+    .dev-card {
+      padding: 15px 15px 15px 70px;
+    }
+
+    .invite-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+
   }
 </style>
 </head>
